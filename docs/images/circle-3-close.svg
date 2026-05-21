@@ -1,0 +1,105 @@
+<svg viewBox="0 0 2400 2400" xmlns="http://www.w3.org/2000/svg">
+  <!-- ============================================================
+       Circle 3 — CLOSE
+       Article set for Towards Data Science
+       Same palette and fonts as Circles 1 and 2.
+       ============================================================ -->
+
+  <!-- Background -->
+  <rect width="2400" height="2400" fill="#F7F2EB"/>
+
+  <!-- Top label -->
+  <text x="200" y="180" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="34" fill="#8B8378" letter-spacing="6">CIRCLE 3</text>
+
+  <!-- Outer ring -->
+  <circle cx="1200" cy="1170" r="680" fill="none"
+          stroke="#2A3441" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- ============= Beat nodes (4 cardinal) ============= -->
+
+  <!-- Beat 1 (top, 90°) — Completeness check — at (1200, 490) -->
+  <circle cx="1200" cy="490" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1200" y="506" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">1</text>
+
+  <!-- Beat 2 (right, 0°) — Constitutional Audit — at (1880, 1170) -->
+  <circle cx="1880" cy="1170" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1880" y="1186" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">2</text>
+
+  <!-- Beat 3 (bottom, -90°) — Retrospective — at (1200, 1850) -->
+  <circle cx="1200" cy="1850" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1200" y="1866" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">3</text>
+
+  <!-- Beat 4 (left, 180°) — Human Gate 3 — at (520, 1170) — ACCENT -->
+  <circle cx="520" cy="1170" r="60" fill="none" stroke="#B85C3E" stroke-width="2" opacity="0.35"/>
+  <circle cx="520" cy="1170" r="38" fill="#B85C3E" stroke="#B85C3E" stroke-width="3"/>
+  <text x="520" y="1186" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#F7F2EB" text-anchor="middle">4</text>
+
+  <!-- ============= Beat labels ============= -->
+
+  <!-- Beat 1 (top) — Completeness check -->
+  <text x="1200" y="350" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="middle">Completeness check</text>
+  <text x="1200" y="400" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="middle">all phases done?</text>
+  <text x="1200" y="434" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="middle">prior halt? re-validate test + review</text>
+
+  <!-- Beat 2 (right) — Constitutional Audit -->
+  <text x="1955" y="1100" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="start">Constitutional</text>
+  <text x="1955" y="1150" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="start">Audit</text>
+  <text x="1955" y="1200" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="start">auditor walks every article</text>
+  <text x="1955" y="1234" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="start">against files-changed.md</text>
+
+  <!-- Beat 3 (bottom) — Retrospective -->
+  <text x="1200" y="1960" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="middle">Retrospective</text>
+  <text x="1200" y="2010" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="middle">inspector concerns ↔ reviewer findings;</text>
+  <text x="1200" y="2044" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="middle">patterns appended to learnings.md</text>
+
+  <!-- Beat 4 (left) — Human Gate 3 (ACCENT) -->
+  <text x="465" y="1100" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#B85C3E" text-anchor="end">Human Gate 3</text>
+  <text x="465" y="1150" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">the audit and retrospective read;</text>
+  <text x="465" y="1184" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">the commit is yours to make</text>
+
+  <!-- ============= Center title + learning loop motif ============= -->
+
+  <text x="1200" y="1130" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="130" font-weight="bold" fill="#2A3441" text-anchor="middle"
+        letter-spacing="4">Close</text>
+
+  <!-- Learning loop motif: clean Unicode circular arrow -->
+  <text x="1200" y="1280" font-family="DejaVu Sans, sans-serif" font-size="90"
+        fill="#2A3441" text-anchor="middle">↻</text>
+
+  <text x="1200" y="1345" font-family="DejaVu Sans, sans-serif" font-size="30"
+        fill="#8B8378" text-anchor="middle" font-style="italic">learnings.md feeds the next plan</text>
+  <text x="1200" y="1385" font-family="DejaVu Sans, sans-serif" font-size="24"
+        fill="#8B8378" text-anchor="middle">the system learns about itself, plan by plan</text>
+
+  <!-- ============= Substrate caption ============= -->
+
+  <line x1="500" y1="2160" x2="1900" y2="2160" stroke="#8B8378" stroke-width="1" opacity="0.4"/>
+
+  <text x="1200" y="2230" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#8B8378" text-anchor="middle" font-style="italic">reads</text>
+  <text x="1200" y="2270" font-family="DejaVu Sans, sans-serif" font-size="26"
+        fill="#8B8378" text-anchor="middle">files-changed.md  ·  constitution  ·  phase artifacts  ·  learnings.md</text>
+  <text x="1200" y="2330" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#8B8378" text-anchor="middle" font-style="italic">writes</text>
+  <text x="1200" y="2370" font-family="DejaVu Sans, sans-serif" font-size="26"
+        fill="#8B8378" text-anchor="middle">plan-constitutional.md  ·  retrospective.md  ·  learnings.md (append)  ·  staged commit</text>
+</svg>

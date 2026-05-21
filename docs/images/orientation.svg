@@ -1,0 +1,106 @@
+<svg viewBox="0 0 2400 2400" xmlns="http://www.w3.org/2000/svg">
+  <!-- ============================================================
+       Orientation — three-pill overview
+       Article header / table-of-contents visual
+       Same palette and fonts as the three detail circles.
+       ============================================================ -->
+
+  <defs>
+    <marker id="arrowhead-dark" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2A3441"/>
+    </marker>
+    <marker id="arrowhead-muted" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B8378"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2400" height="2400" fill="#F7F2EB"/>
+
+  <!-- Top label -->
+  <text x="200" y="180" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="34" fill="#8B8378" letter-spacing="6">OVERVIEW</text>
+
+  <!-- ============= Title ============= -->
+
+  <text x="1200" y="600" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="86" font-weight="bold" fill="#2A3441" text-anchor="middle">
+    A planning &amp; execution loop
+  </text>
+  <text x="1200" y="685" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="44" fill="#8B8378" text-anchor="middle" font-style="italic">
+    three altitudes · standing artifacts · human gates · learning that compounds
+  </text>
+
+  <!-- ============= Three circles ============= -->
+
+  <!-- Circle 1: Plan -->
+  <circle cx="550" cy="1300" r="200" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="550" y="1340" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="180" font-weight="bold" fill="#2A3441" text-anchor="middle">1</text>
+
+  <!-- Circle 2: Execute -->
+  <circle cx="1200" cy="1300" r="200" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1200" y="1340" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="180" font-weight="bold" fill="#2A3441" text-anchor="middle">2</text>
+
+  <!-- Circle 3: Close -->
+  <circle cx="1850" cy="1300" r="200" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1850" y="1340" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="180" font-weight="bold" fill="#2A3441" text-anchor="middle">3</text>
+
+  <!-- ============= Forward arrows between circles ============= -->
+
+  <line x1="770" y1="1300" x2="970" y2="1300"
+        stroke="#2A3441" stroke-width="4" marker-end="url(#arrowhead-dark)"/>
+  <line x1="1420" y1="1300" x2="1620" y2="1300"
+        stroke="#2A3441" stroke-width="4" marker-end="url(#arrowhead-dark)"/>
+
+  <!-- ============= Labels under each circle ============= -->
+
+  <text x="550" y="1620" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="74" font-weight="bold" fill="#2A3441" text-anchor="middle">Plan</text>
+  <text x="550" y="1680" font-family="DejaVu Sans, sans-serif" font-size="32"
+        fill="#5B6470" text-anchor="middle">idea → committed PLAN.md</text>
+
+  <text x="1200" y="1620" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="74" font-weight="bold" fill="#2A3441" text-anchor="middle">Execute</text>
+  <text x="1200" y="1680" font-family="DejaVu Sans, sans-serif" font-size="32"
+        fill="#5B6470" text-anchor="middle">phase by phase, gated</text>
+
+  <text x="1850" y="1620" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="74" font-weight="bold" fill="#2A3441" text-anchor="middle">Close</text>
+  <text x="1850" y="1680" font-family="DejaVu Sans, sans-serif" font-size="32"
+        fill="#5B6470" text-anchor="middle">audit, learn, commit</text>
+
+  <!-- ============= Return / feedback loop ============= -->
+
+  <!-- Curved arrow from Circle 3 back to Circle 1, going up and over -->
+  <path d="M 1850 1090 C 1850 850, 550 850, 550 1090"
+        fill="none" stroke="#8B8378" stroke-width="3" stroke-dasharray="10 8"
+        marker-end="url(#arrowhead-muted)" opacity="0.8"/>
+
+  <text x="1200" y="850" font-family="DejaVu Sans, sans-serif" font-size="34"
+        fill="#8B8378" text-anchor="middle" font-style="italic">
+    learnings.md feeds the next plan
+  </text>
+
+  <!-- ============= Bottom note: the substrate idea ============= -->
+
+  <line x1="500" y1="1980" x2="1900" y2="1980" stroke="#8B8378" stroke-width="1" opacity="0.4"/>
+
+  <text x="1200" y="2070" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="44" fill="#2A3441" text-anchor="middle" font-style="italic">
+    The power lies in the substrate.
+  </text>
+  <text x="1200" y="2160" font-family="DejaVu Sans, sans-serif" font-size="30"
+        fill="#5B6470" text-anchor="middle">
+    Standing artifacts — protocols, templates, knowledge graphs, learnings —
+  </text>
+  <text x="1200" y="2200" font-family="DejaVu Sans, sans-serif" font-size="30"
+        fill="#5B6470" text-anchor="middle">
+    impose targeted, coherent, intentional discipline across every altitude.
+  </text>
+</svg>

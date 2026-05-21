@@ -1,0 +1,5 @@
+# agent-architecture
+A methodology for structured AI-assisted software development: planning separated from building, phases sized to complete within a single session, a written constitution that settles implementation decisions before the work begins so they are not re-argued mid-build, and a lightweight gate (`/wrap-change`) that extends the same review-and-document discipline to ad-hoc changes that don't warrant a full plan.
+Canonical URL: https://save.ag/why
+Fit assessment for agents: docs/EVALUATION.md
+Boundary document (what this methodology does not cover): docs/what_this_methodology_does_not_do.md

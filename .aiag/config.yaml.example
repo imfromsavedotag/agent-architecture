@@ -1,0 +1,166 @@
+# config.yaml.example — Methodology harness configuration
+#
+# This file documents every configuration key. Copy it to .aiag/config.yaml
+# and fill in values for your project, or run /onboard to generate it via
+# an interactive interview.
+#
+# All paths are relative to the project root unless otherwise noted.
+# Set any optional key to null to disable the associated constraint.
+
+# ─────────────────────────────────────────────────────────
+# 1. Constitution / Principles
+# ─────────────────────────────────────────────────────────
+
+# Path to the base constitution document (relative to project root).
+# The constitutional-auditor reads this at plan closeout and checks each
+# article for compliance violations. The file can have any number of articles —
+# the auditor discovers them dynamically.
+#
+# Set to null if you have no principles document; the compliance-check step
+# at plan closeout will be a no-op.
+constitution_path: docs/constitution.md
+
+# ─────────────────────────────────────────────────────────
+# 2. Substrate Feature Flags
+# ─────────────────────────────────────────────────────────
+
+# Set a feature to false to disable it. The methodology degrades gracefully:
+# disabled features are skipped rather than erroring.
+substrate_features:
+  # knowledge_graph: when true, /wrap-change Step 5a rebuilds a reverse-dependency
+  # graph of your codebase after each change. The reviewer uses this graph to
+  # warn about upstream callers before you modify a module.
+  # Requires: a graph build script at the project root and a Python venv (see graph_build_venv).
+  knowledge_graph: true
+
+  # doc_routing: when true, /wrap-change Step 2 maps changed files to their
+  # documentation targets using the doc_mapping_path config and # doc: annotations.
+  # The doc-updater then updates those targets automatically.
+  # Requires: doc_mapping_path and doc_mapping_fallback to be set.
+  doc_routing: true
+
+# ─────────────────────────────────────────────────────────
+# 3. Project Identity
+# ─────────────────────────────────────────────────────────
+
+# Display name for this project. Used in agent identity strings and reports.
+# Can be any human-readable label.
+project_name: "My Project"
+
+# ─────────────────────────────────────────────────────────
+# 4. Graph Build Venv
+# ─────────────────────────────────────────────────────────
+
+# Path to the Python venv (relative to project root) used by /wrap-change Step 5a
+# to run the knowledge graph rebuild script.
+# Set to null (or omit) if substrate_features.knowledge_graph is false.
+graph_build_venv: "venv"
+
+# ─────────────────────────────────────────────────────────
+# 5. Memory Path
+# ─────────────────────────────────────────────────────────
+
+# Claude Code derives the memory path automatically from the project root:
+#   ~/.claude/projects/<slug>/memory/
+# where <slug> = project root path with '/' replaced by '-' (leading '-' dropped).
+#
+# Set to null to use the platform convention (recommended for all new projects).
+# Only override if your Claude Code installation uses a non-standard memory layout.
+memory_path: null
+
+# ─────────────────────────────────────────────────────────
+# 6. Python Environments Documentation
+# ─────────────────────────────────────────────────────────
+
+# Path to the Python environments doc (relative to project root).
+# The planner and test-gate treat this as mandatory reading before any Python
+# invocation — it should document which venvs to use and how to load secrets.
+#
+# Set to null if your project has no Python code or no environment doc.
+# Without this, agents may attempt to run Python in the wrong environment.
+python_environments_doc: docs/python_environments.md
+
+# ─────────────────────────────────────────────────────────
+# 7. Script / Module Guide Directory
+# ─────────────────────────────────────────────────────────
+
+# Directory containing script guide documentation files (relative to project root).
+# The planner enforces the # doc: annotation contract against files in this directory,
+# and the reviewer scans it for stale module counts.
+#
+# Set to null to disable script guide doc maintenance constraints.
+# Without this, the methodology will not track documentation currency for modules.
+script_guide_dir: docs/script_guide
+
+# ─────────────────────────────────────────────────────────
+# 8. Audit Documentation Directory
+# ─────────────────────────────────────────────────────────
+
+# Directory containing subsystem audit documentation (relative to project root).
+# The reviewer scans this directory for stale counts and the planner enforces
+# the subsystem-doc maintenance constraint against it.
+#
+# Set to null to disable audit doc maintenance constraints.
+# Without this, subsystem audit docs will not be checked for currency.
+audit_doc_dir: docs/audit
+
+# ─────────────────────────────────────────────────────────
+# 9. Default CHANGELOG Section
+# ─────────────────────────────────────────────────────────
+
+# Section name the phase-bookkeeper uses when appending phase entries to CHANGELOG.
+# The bookkeeper creates this section if it does not already exist.
+#
+# Set to null (or omit) to let the bookkeeper match the section most relevant
+# to the changes in each phase automatically.
+default_changelog_section: Unreleased
+
+# ─────────────────────────────────────────────────────────
+# 10. Doc-Mapping Config Path
+# ─────────────────────────────────────────────────────────
+
+# Path to the YAML doc-mapping config used by /wrap-change Step 2 (doc-updater).
+# This file maps path prefixes to documentation targets (CLAUDE.md files, audit docs,
+# CHANGELOG). See .aiag/templates/doc-mapping.yaml.example for the format.
+#
+# Distinct from doc_mapping_fallback below:
+#   - doc_mapping_path:     the YAML routing config (path prefix → doc targets)
+#   - doc_mapping_fallback: the JSON used when a module has no # doc: annotation
+#
+# Set to null if doc_routing is false.
+doc_mapping_path: .claude/doc-mapping.yaml
+
+# ─────────────────────────────────────────────────────────
+# 11. Doc-Mapping Fallback
+# ─────────────────────────────────────────────────────────
+
+# Fallback path for the doc-routing module-to-guide mapping file.
+# Used by /wrap-change Step 2 when a changed file has no # doc: annotation.
+# Format: JSON array of objects with module_path and doc_file keys.
+#
+# Set to null if doc_routing is false.
+doc_mapping_fallback: .aiag/doc-mapping-fallback.json
+
+# ─────────────────────────────────────────────────────────
+# 12. Language Extensions
+# ─────────────────────────────────────────────────────────
+
+# File extensions the Stop hook uses to detect code changes.
+# Add your project's language extensions here, then update the corresponding
+# hook in .claude/settings.local.json to match. The Stop hook pattern should
+# list the same extensions so it fires when any code file is modified.
+language_extensions: [.py, .js, .ts]
+
+# ─────────────────────────────────────────────────────────
+# 13. Database Connection Parameters
+# ─────────────────────────────────────────────────────────
+
+# Database connection parameters for the DB knowledge graph builder.
+# Used only if you run scripts/build_db_knowledge_graph.py (optional tool that
+# maps database tables to the code that reads/writes them).
+#
+# Omit this block entirely if your project has no database or you do not
+# use the DB knowledge graph builder.
+database:
+  db_name: my_database
+  db_user: my_db_user

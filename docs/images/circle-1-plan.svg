@@ -1,0 +1,140 @@
+<svg viewBox="0 0 2400 2400" xmlns="http://www.w3.org/2000/svg">
+  <!-- ============================================================
+       Circle 1 — PLAN
+       Article set for Towards Data Science
+       Palette:
+         #F7F2EB  warm off-white background
+         #2A3441  deep slate (primary ink)
+         #5B6470  medium slate (secondary text)
+         #8B8378  warm gray (substrate caption)
+         #B85C3E  muted terracotta (human gates)
+       Fonts: Bitstream Charter (serif), DejaVu Sans (sans)
+       ============================================================ -->
+
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="6" refY="5"
+            markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2A3441"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2400" height="2400" fill="#F7F2EB"/>
+
+  <!-- Top label: process name (small, secondary, top-left) -->
+  <text x="200" y="180" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="34" fill="#8B8378" letter-spacing="6">CIRCLE 1</text>
+
+  <!-- Outer ring -->
+  <circle cx="1200" cy="1170" r="680" fill="none"
+          stroke="#2A3441" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- (Directional ticks removed — numbered nodes already imply flow direction.) -->
+
+  <!-- ============= Beat nodes ============= -->
+
+  <!-- Beat 1 (top, 90°) — Idea — at (1200, 490) -->
+  <circle cx="1200" cy="490" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1200" y="506" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">1</text>
+
+  <!-- Beat 2 (upper right, 18°) — Code surface — at (1827.6, 660.1) -->
+  <circle cx="1827.6" cy="660.1" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1827.6" y="676.1" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">2</text>
+
+  <!-- Beat 3 (lower right, -54°) — Planning session — at (1587.8, 1703.9) -->
+  <circle cx="1587.8" cy="1703.9" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="1587.8" y="1719.9" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">3</text>
+
+  <!-- Beat 4 (lower left, -126°) — Plan written — at (812.2, 1703.9) -->
+  <circle cx="812.2" cy="1703.9" r="38" fill="#F7F2EB" stroke="#2A3441" stroke-width="3"/>
+  <text x="812.2" y="1719.9" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#2A3441" text-anchor="middle">4</text>
+
+  <!-- Beat 5 (upper left, 162°) — Human Gate 1 — at (572.4, 660.1) — ACCENT -->
+  <!-- Soft outer halo -->
+  <circle cx="572.4" cy="660.1" r="60" fill="none" stroke="#B85C3E" stroke-width="2" opacity="0.35"/>
+  <circle cx="572.4" cy="660.1" r="38" fill="#B85C3E" stroke="#B85C3E" stroke-width="3"/>
+  <text x="572.4" y="676.1" font-family="DejaVu Sans, sans-serif" font-size="34"
+        font-weight="bold" fill="#F7F2EB" text-anchor="middle">5</text>
+
+  <!-- ============= Beat labels ============= -->
+
+  <!-- Beat 1 label (top) — Idea -->
+  <text x="1200" y="370" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="middle">Idea</text>
+  <text x="1200" y="420" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="middle">a need surfaces; planning begins</text>
+
+  <!-- Beat 2 label (upper right) — Code surface -->
+  <text x="1900" y="610" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="start">Code surface</text>
+  <text x="1900" y="660" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="start">Claude Code reads graph.json</text>
+  <text x="1900" y="694" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="start">→ markdown for reasoning session</text>
+
+  <!-- Beat 3 label (lower right) — Reasoning session -->
+  <text x="1660" y="1755" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="start">Reasoning session</text>
+  <text x="1660" y="1800" font-family="DejaVu Sans, sans-serif" font-size="26"
+        fill="#8B8378" text-anchor="start">claude.ai  ·  planning_protocol.md</text>
+  <text x="1660" y="1840" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="start">→ briefing.md  +  companion.md</text>
+
+  <!-- Beat 4 label (lower left) — Plan written -->
+  <text x="740" y="1755" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#2A3441" text-anchor="end">Plan written</text>
+  <text x="740" y="1805" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">two docs return to Claude Code;</text>
+  <text x="740" y="1839" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">/plan → requirements.md, PLAN.md,</text>
+  <text x="740" y="1873" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">STATE.md  + gap analysis</text>
+
+  <!-- Beat 5 label (upper left) — Human Gate 1 (accent) -->
+  <text x="500" y="610" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="50" font-weight="bold" fill="#B85C3E" text-anchor="end">Human Gate 1</text>
+  <text x="500" y="660" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">the plan reviewed end to end;</text>
+  <text x="500" y="694" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#5B6470" text-anchor="end">decision to proceed is users</text>
+
+  <!-- ============= Center title + collaboration motif ============= -->
+
+  <text x="1200" y="1130" font-family="Charter, 'Bitstream Charter', Georgia, serif"
+        font-size="130" font-weight="bold" fill="#2A3441" text-anchor="middle"
+        letter-spacing="4">Plan</text>
+
+  <!-- Collaboration motif: custom bidirectional arrows
+       Visual weight tuned to match ↻ on Circle 3.
+       Top arrow points right; bottom arrow points left. -->
+  <g transform="translate(1200, 1280)">
+    <!-- Top arrow: right-pointing -->
+    <rect x="-45" y="-18" width="70" height="6" fill="#2A3441"/>
+    <polygon points="25,-27 55,-15 25,-3" fill="#2A3441"/>
+    <!-- Bottom arrow: left-pointing -->
+    <rect x="-25" y="12" width="70" height="6" fill="#2A3441"/>
+    <polygon points="-25,3 -55,15 -25,27" fill="#2A3441"/>
+  </g>
+
+  <text x="1200" y="1345" font-family="DejaVu Sans, sans-serif" font-size="30"
+        fill="#8B8378" text-anchor="middle" font-style="italic">human ↔ AI in structured dialog</text>
+  <text x="1200" y="1385" font-family="DejaVu Sans, sans-serif" font-size="24"
+        fill="#8B8378" text-anchor="middle">pushback, gap analysis, and judgment shape the artifact</text>
+
+  <!-- ============= Substrate caption ============= -->
+
+  <line x1="500" y1="2160" x2="1900" y2="2160" stroke="#8B8378" stroke-width="1" opacity="0.4"/>
+
+  <text x="1200" y="2230" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#8B8378" text-anchor="middle" font-style="italic">reads</text>
+  <text x="1200" y="2270" font-family="DejaVu Sans, sans-serif" font-size="26"
+        fill="#8B8378" text-anchor="middle">graph.json  ·  CLAUDE.md  ·  learnings.md  ·  velocity_reference.md</text>
+  <text x="1200" y="2330" font-family="DejaVu Sans, sans-serif" font-size="28"
+        fill="#8B8378" text-anchor="middle" font-style="italic">writes</text>
+  <text x="1200" y="2370" font-family="DejaVu Sans, sans-serif" font-size="26"
+        fill="#8B8378" text-anchor="middle">briefing.md  ·  companion.md  ·  requirements.md  ·  PLAN.md  ·  STATE.md</text>
+</svg>
