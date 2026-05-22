@@ -16,13 +16,15 @@ These are not tool failures. They are predictable consequences of using AI tools
 
 ## What the methodology does
 
-The core structure is a split between planning and building. A planning session — run as a separate conversation, away from the coding tool — is structured as a dialog: the planner pushes back on framing, names assumption gaps, and disagrees plainly when scope or premises are wrong. The session produces a phased plan and a briefing document. The briefing carries the architect's intent and the rules the agent should follow into the coding session, without requiring the agent to have been present for the planning conversation. When the coding session ends and memory resets, those documents are the source of truth.
+The core structure is a split between planning and building. A planning session — run as a separate conversation, away from the coding tool — is structured as adversarial dialog: the planner is configured to surface assumption gaps, generate counterproposals against the stated scope, and hold the conversation at any unresolved gap until it closes. Disagreement is the mechanism, not a posture. The session produces a phased plan and a briefing document. The briefing carries the architect's intent and the rules the agent should follow into the coding session, without requiring the agent to have been present for the planning conversation. When the coding session ends and memory resets, those documents are the source of truth.
 
 Phases are sized to complete within a single session, so the agent never approaches its limits during a build. The review chain runs automatically after each phase: test gate, code reviewer, constitutional auditor, phase completer. The constitution pre-decides implementation choices — config before code, isolated environments, every decision recorded — so those choices are not relitigated mid-build. Completed plans accumulate a learnings file; the planner reads it before drafting new plans, so recurring failure modes stop recurring.
 
 The automation layer is built natively for Claude Code — the skills, agents, and session hooks rely on Claude Code's architecture. The core planning philosophy can be applied manually in any environment, but the automated review chain requires Claude Code. The methodology has already been rearchitected for portability: the constitution is domain-neutral with an extension model, onboarding is interview-driven and produces configured artifacts for any project, and a worked example of port planning to a different platform is included in the repository. Reducing the Claude Code-specific automation dependency for other platforms is ongoing work — portability is treated as proof of the methodology's value, not an afterthought.
 
 The plan history behind these claims is documented in `docs/velocity_reference.md`. It is not illustrative — it is the actual record from the project this methodology was built for, with real durations, phase counts, and failure modes.
+
+**Adapt, don't copy.** This methodology is documented for a specific production system — the artifacts, constitution, and tooling reflect the decisions made for that project. A serious practitioner reads it to extract the underlying principles and adapt them to their own context, not to install it wholesale. `docs/EVALUATION.md` and the `/onboard` interview are designed to support that translation.
 
 ---
 
@@ -91,6 +93,8 @@ Clone the repository into your project root. Replace the constitution articles' 
 The methodology is designed to be modified. If the review process is more than your work warrants, simplify it. If you don't need eleven articles, write fewer. The shape matters more than the specifics.
 
 **Not all work requires a formal plan.** Quick fixes, debug sessions, and one-file changes run through `/wrap-change` instead — a lightweight gate that enforces documentation and knowledge graph updates before anything is committed. The self-documenting guarantee holds for ad-hoc work for the same reason it holds for planned work: the gate is mechanical, not a matter of remembering.
+
+**Minimal starting point.** If you are adopting incrementally, three primitives are non-negotiable: a persistent state substrate (files on disk that carry decisions across sessions), phased plans with human gates before each implementation begins, and post-phase review before approving continuation. The constitution, automated review chain, and retrospective system are scaling infrastructure — add them as the work warrants. `docs/EVALUATION.md` has the full fit-assessment guidance, including when not to adopt.
 
 ---
 

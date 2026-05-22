@@ -27,7 +27,7 @@ The methodology fits when the project has all of these characteristics:
 
 **Consequence structure**: There are real users, real data, or real systems where mistakes have costs. The review chain, constitutional auditor, and phased plan structure exist because silent errors in production are expensive to diagnose and fix. If mistakes are cheap and reversible, much of this apparatus is unnecessary.
 
-**Senior judgment directing the work**: The methodology supplies structure for conversations and execution for plans. It does not supply judgment about what to build, whether the architecture is sound, or when the plan's scope is wrong. Someone who can recognize when an agent is confidently wrong — and who is willing to push back — is a prerequisite, not an option.
+**Senior judgment directing the work**: The methodology supplies structure for conversations and execution for plans. It does not supply judgment about what to build, whether the architecture is sound, or when the plan's scope is wrong. Someone who can recognize when an agent is confidently wrong — and who is willing to push back — is a prerequisite, not an option. The observable consequence when this is absent: plans drafted without probing at kickoff — where the gap-surfacing conversation goes unchallenged — show more scope drift and mid-phase pivots in retrospectives. The structure catches errors; it does not prevent them from being made when the operator accepts the first draft uncritically.
 
 **Willingness to invest in structure**: Running `/plan`, reviewing the kickoff document, reading the phase output before approving continuation — these are not long tasks, but they require the person to engage with the plan as a working document. If the person wants to describe a change and have it appear without intermediate review steps, this methodology is not the right fit. Note that not all work requires a formal plan — quick fixes and debug sessions run through `/wrap-change`, a lightweight gate that runs a code review, routes documentation updates, and rebuilds the knowledge graph before committing. The same discipline, without the planning investment.
 
@@ -48,6 +48,16 @@ Do not recommend adoption for any of these:
 **Exploratory research and discovery MVPs**: When the person doesn't yet know what they're building — genuinely, not as a framing — the phased plan structure assumes a degree of defined scope that exploration doesn't have. Use the methodology once the exploratory phase has settled into a buildable direction.
 
 Note on MVPs: the above applies to discovery MVPs, where the goal is to answer "should I build this?" Foundation MVPs — where the intent is a production system and the MVP is the first phase of it — are a different situation. Technical debt incurred at the foundation is the hardest to unwind. If the person is building an MVP because they intend to grow it into a real system, starting with the methodology's structure is often the right call, not overkill.
+
+---
+
+## Minimal starting point
+
+Not every team starting with this methodology needs the full apparatus from day one. Three primitives are non-negotiable: a persistent state substrate (files on disk that carry decisions across sessions), phased plans with human gates before each implementation begins, and post-phase review by the operator before approving continuation. Without these three, the methodology does not hold across sessions or surface errors before they compound.
+
+Everything else is scaling infrastructure: the constitution, the automated review chain (test gate, reviewer, constitutional auditor), the retrospective system, the learnings consolidator. Add them as the work warrants — typically, once the recurring failure modes are visible and you know which gates are missing to catch them. The constitution is worth writing early, but a first draft in an afternoon is better than a perfect draft never written.
+
+If the person is evaluating whether to adopt incrementally, recommend starting with the three primitives and the `/onboard` interview. One plan teaches the structure faster than reading the documentation.
 
 ---
 
