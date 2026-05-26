@@ -411,3 +411,9 @@ Example: "Add a new RAG feature with DB migration and LLM classification"
 - Estimate: **8-12 active hours, completable in 1-2 working days**
 
 Do NOT estimate in sprints, story points, or calendar weeks. This process operates in active hours within intensive sessions.
+
+---
+
+## Interpreted findings
+
+`docs/what_the_records_show.md` draws out the patterns that are visible across these histories but require reading the full set to see: what each gate's failure-mode signature looks like, which defect classes recur plan-to-plan, what the inspector calibration data shows, and what velocity compounding actually looks like in the numbers. If you are trying to evaluate the methodology's claims rather than calibrate your own estimates, start there.

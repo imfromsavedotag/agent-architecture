@@ -97,6 +97,8 @@ One data point worth noting for fit assessment: Plan 30 (Methodology Normalizati
 
 The velocity compounds. It does not start compounded.
 
+For the interpreted findings from those histories — what each gate catches and misses, which defect classes recur, and what the inspector calibration data shows — see `docs/what_the_records_show.md`.
+
 ---
 
 ## Where to find the full boundary document
